@@ -1,10 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en"> 
     <head>
-        <title>oliver Careers</title>
+        <meta charset="UTF-8">  
+        <title>Oliver Careers</title>
+        <style>
+            h1 {
+                font-size: 40px;
+                font-family: Roboto;
+                font-weight: normal; 
+                color: hsla(0, 3%, 6%, 0.972);
+                text-align: center;
+            } 
+
+            #oliver-image {
+                width: 100%;
+                height: 350px;
+                object-fit: cover;
+               
+            }
+            h2{
+                font-family: Roboto;
+                font-size: 32px;
+                color: rgb(100, 100, 100);
+                text-align: center;
+                font-weight: normal;
+            }
+            .bodytest {
+                font-family: Roboto;
+                color: rgb(80, 80, 80);
+            }
+            #main-content {
+                max-width: 720px;
+                margin: 0 auto;
+            }
+            
+        </style>
     </head>
     <body>
+        <div id="main-content"> 
         <h1>Oliver Careers</h1>
-        <img src="{{ url_for('static', filename='oliver.jpg') }}" alt="Oliver">
+        <img id="oliver-image" src="{{ url_for('static', filename='oliver.jpg') }}" alt="Oliver Careers Office">
+        
+        <h2>About Oliver</h2>
+       
+        <p class="bodytest">
+            Searching for a job can be tough, but you don’t have to do it alone. Oliver Careers was created by people who’ve been in your shoes. We focus on transparency, ease of use, and quality listings to make your search as stress-free as possible. We’re more than just a job board—we’re a community dedicated to helping you thrive in your professional life.</p>
+        <h2>Open Positions</h2>
+        <p class="bodytest">TODO -Show the jobs here</p>
+        <div style="text-align: center;">
+        <button>Contact Us</button>
+            <p>copyright © 2023 Oliver Careers. All rights reserved.</p>
+        </div>
+        </div>
     </body>
+           
 </html>
