@@ -1,55 +1,37 @@
 <!DOCTYPE html>
 <html lang="en"> 
     <head>
-        <meta charset="UTF-8">  
-        <title>Oliver Careers</title>
+        <title> Oliver Careers</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/jpeg" href="{{ url_for('static', filename='logo.jpg') }}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <style>
-            h1 {
-                font-size: 40px;
-                font-family: Roboto;
-                font-weight: normal; 
-                color: hsla(0, 3%, 6%, 0.972);
-                text-align: center;
-            } 
-
             #oliver-image {
+                height: 360px;
                 width: 100%;
-                height: 350px;
                 object-fit: cover;
-               
             }
-            h2{
-                font-family: Roboto;
-                font-size: 32px;
-                color: rgb(100, 100, 100);
-                text-align: center;
-                font-weight: normal;
-            }
-            .bodytest {
-                font-family: Roboto;
-                color: rgb(80, 80, 80);
-            }
-            #main-content {
-                max-width: 720px;
-                margin: 0 auto;
-            }
-            
         </style>
     </head>
     <body>
-        <div id="main-content"> 
-        <h1>Oliver Careers</h1>
-        <img id="oliver-image" src="{{ url_for('static', filename='oliver.jpg') }}" alt="Oliver Careers Office">
+        <div class="container"> 
+        <h1 class="text-center mt-2 mb-4">{{company_name}}Careers</h1>
+        <img class="img-fluid" id="oliver-image" src="{{ url_for('static', filename='oliver.jpg') }}" alt="Oliver Careers Office">
         
-        <h2>About Oliver</h2>
+        <h2 class="text-center mt-2 mb-4">About Oliver</h2>
        
-        <p class="bodytest">
+        <p class="lead">
             Searching for a job can be tough, but you don’t have to do it alone. Oliver Careers was created by people who’ve been in your shoes. We focus on transparency, ease of use, and quality listings to make your search as stress-free as possible. We’re more than just a job board—we’re a community dedicated to helping you thrive in your professional life.</p>
-        <h2>Open Positions</h2>
-        <p class="bodytest">TODO -Show the jobs here</p>
-        <div style="text-align: center;">
-        <button>Contact Us</button>
-            <p>copyright © 2023 Oliver Careers. All rights reserved.</p>
+        <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+        <div class="text-center">
+            {% for job in jobs %}
+                {% include 'jobitem.html' %}
+            {% endfor%}
+        </div>
+        <div class="text-center">
+        <button class="btn btn-primary btn-lg">Contact Us</button>
+            <p class="mt-4">copyright © 2026 Oliver Careers. All rights reserved.</p>
         </div>
         </div>
     </body>
