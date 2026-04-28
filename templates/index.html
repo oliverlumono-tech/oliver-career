@@ -11,29 +11,36 @@
                 height: 360px;
                 width: 100%;
                 object-fit: cover;
+                margin-bottom: 16px;
             }
         </style>
     </head>
     <body>
+        {% include 'nav.html' %}
+         <img class="img-fluid" id="oliver-image" src="{{ url_for('static', filename='oliver.jpg') }}" alt="Oliver Careers Office">
         <div class="container"> 
         <h1 class="text-center mt-2 mb-4">{{company_name}}Careers</h1>
-        <img class="img-fluid" id="oliver-image" src="{{ url_for('static', filename='oliver.jpg') }}" alt="Oliver Careers Office">
-        
-        <h2 class="text-center mt-2 mb-4">About Oliver</h2>
-       
+        <div class="row" style="margin-bottom: 16px">
+            <div class="col-md-6">
         <p class="lead">
             Searching for a job can be tough, but you don’t have to do it alone. Oliver Careers was created by people who’ve been in your shoes. We focus on transparency, ease of use, and quality listings to make your search as stress-free as possible. We’re more than just a job board—we’re a community dedicated to helping you thrive in your professional life.</p>
-        <h2 class="text-center mt-2 mb-4">Open Positions</h2>
+            </div>
+             <div class="d-none d-md-block col-md-6">
+            <img src="{{ url_for('static', filename='people.jpg') }}" style="height:320px; border-radius: 4px;">
+        </div>
+        <h2 class="text-center mt-2 mb-4" id="jobs">Open Positions</h2>
         <div class="text-center">
             {% for job in jobs %}
                 {% include 'jobitem.html' %}
             {% endfor%}
         </div>
-        <div class="text-center">
-        <button class="btn btn-primary btn-lg">Contact Us</button>
-            <p class="mt-4">copyright © 2026 Oliver Careers. All rights reserved.</p>
+        <div class="text-center" id="contact"> 
+        <a href="mailto:oliverlumon8@gmail.com?subject=Application%20for%20job&body=My%20name%3A%20%3CEnter%20your%20name%3E%0D%0A%0D%0AMy%20questions%3A%20%3Center%20questions%20here%3E" class="btn btn-primary btn-lg">Contact Us</a>
         </div>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <div>
+        {% include 'footer.html' %}
         </div>
     </body>
-           
 </html>
